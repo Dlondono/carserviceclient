@@ -6,12 +6,13 @@ import { Observable } from 'rxjs';
 export class CarService {
   public API = '//thawing-chamber-47973.herokuapp.com';
   public CAR_API = this.API + '/cars';
+  public OWN_API = this.API + '/owners';
 
   constructor(private http: HttpClient) {
   }
 
-  getAll(): Observable<any> {
-    return this.http.get(this.API + '/cool-cars');
+  getAll(variable:string): Observable<any> {
+    return this.http.get(this.API + '/'+ variable);
   }
 
   get(id: string) {
@@ -27,8 +28,28 @@ export class CarService {
     }
     return result;
   }
-
+  
   remove(href: string) {
     return this.http.delete(href);
   }
+
+  getAllOwners(): Observable<any> {
+    return this.http.get(this.API + '/owners');
+  }
+
+  getOwner(id: string) {
+    return this.http.get(this.OWN_API + '/' + id);
+  }
+
+  saveOwner(owner: any): Observable<any> {
+    let result: Observable<Object>;
+    if (owner['href']) {
+      result = this.http.put(owner.href, owner);
+    } else {
+      result = this.http.post(this.OWN_API, owner);
+    }
+    return result;
+  }
+
+
 }

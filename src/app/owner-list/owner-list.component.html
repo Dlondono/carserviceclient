@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-title>Owner List</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let owner of owners">
+        <img mat-list-avatar src="{{owner.giphyUrl}}" alt="{{owner.name}}">
+        <h3 mat-line>
+          <input  type="checkbox" id="isCheckBox" (change)='lista($event,owner)' />
+          <a mat-button [routerLink]="['/owners', owner.id]">{{owner.name}}</a>
+        </h3>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <button mat-fab color="primary" [routerLink]="['/owner-add']">Add</button> <br><br>
+  <button mat-raised-button color="before" type="submit" [disabled]="!areSelected" (click)='delete()'>Delete Selection</button>
+</mat-card>
