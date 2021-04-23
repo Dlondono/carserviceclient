@@ -1,11 +1,11 @@
-servicios
-crud de owner getAllOwners, getOwner, saveOwner, removeOwner.
-asociasión de car a owner.
+servicios  
+crud de owner getAllOwners, getOwner, saveOwner, removeOwner.  
+asociasión de car a owner.  
 
 
-Componentes agregados
-owner-list: componente con la lista de dueños existentes en la api, opciones de agregar y borrar seleccion
-owner-edit: Componente con la información del dueño seleccionado y con la posibilidad de editar sus datos
+Componentes agregados  
+owner-list: componente con la lista de dueños existentes en la api, opciones de agregar y borrar seleccion  
+owner-edit: Componente con la información del dueño seleccionado y con la posibilidad de editar sus datos  
 
 
 
